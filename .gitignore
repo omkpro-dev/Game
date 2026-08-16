@@ -1,0 +1,6 @@
+# generated screenshots (regeneratable via tests)
+*.png
+# node
+node_modules/
+npm-debug.log*
+.DS_Store
