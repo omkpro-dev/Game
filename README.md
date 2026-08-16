@@ -1,99 +1,115 @@
 # 🌍 GEOPOLITIK — Grand Strategy
 
-A real-time grand-strategy game played on the **real world map**, running entirely in your
-browser. Lead any of the world's nations through warfare, diplomacy, economics and intrigue.
-Built as a single self-contained HTML file — **no install, no server, no internet required.**
+A real-time grand-strategy game played across the **real world map, rendered as ~15,000 octagon
+tiles**. Every city, oilfield and farm is a tile you can capture or develop. **Design your own
+army divisions** Hearts-of-Iron style, push front lines tile by tile, **build industry & finance**
+that take years to pay off, and wield diplomacy, alliances, research, espionage and law.
+Real-time, with pause. Runs entirely in your browser — **one self-contained file, no install.**
 
 ## ▶️ How to play on macOS
 
-Just **double-click `index.html`** — it opens in Safari or Chrome and runs. That's it.
-
-(Or drag `index.html` onto a browser window.)
+**Double-click `index.html`** — it opens in Safari or Chrome and runs. That's it.
 
 ## 🎮 Controls
 
 | Action | How |
 | --- | --- |
 | Pause / resume | `Space` or the ⏸ button |
-| Game speed | `1` `2` `3` keys, or the ▶ ▶▶ ▶▶▶ buttons |
-| Zoom map | Mouse scroll wheel, or ＋ / － buttons |
-| Pan map | Click-drag the map |
-| Inspect a country | Click it — details & actions appear on the right |
-| Manage your nation | The tabs on the left (Nation, Economy, Military, …) |
-| Map overlays | Political · Relations · Power · Blocs (top-left of map) |
+| Game speed | `1` `2` `3` keys, or ▶ ▶▶ ▶▶▶ |
+| Zoom / pan the map | Scroll wheel · drag |
+| Inspect a tile | Click it — details & actions on the right |
+| **Move / attack** | Click **your army** (the counter with a number), then click a destination or enemy tile |
+| Build on a tile | Click one of **your** tiles → Build tab → choose a structure |
+| Manage your nation | The tabs on the left |
+| Map overlays | Political · Relations · Power · Development · Blocs |
+| Cancel an army order | `Esc` |
 
-The world runs in **real time with pause** — rival nations fight, ally, research and expand
-whether or not you act. Pause any time to think and issue orders.
+The world runs in **real time with pause** — rivals fight, ally, research, build and expand
+whether or not you act.
 
-## 🧩 The 12 systems
+## 🧩 What's in it
 
-1. **Army** — the backbone of land conquest
-2. **Air Force** — force projection and support
-3. **Navy** — enables invasions across water
-4. **Special Forces** — combat edge + covert operations
-5. **Diplomacy** — relations, gifts, insults, pacts, war & peace
-6. **Alliances** — found or join blocs for mutual defense & trade
-7. **Resources** — 5 basic (Food, Energy, Metals, Oil, Timber), 3 strategic
-   (Steel, Electronics, Chemicals) and 2 rare/special (Uranium, Rare Earths)
-8. **Industry** — converts raw materials, sets military build speed
-9. **Agriculture** — feeds your population
-10. **Finance** — drives GDP growth and tax income
-11. **Domestic Laws** — economy, conscription, trade, civil rights, welfare
-12. **International Treaties** — free trade, non-proliferation, climate, collective security, human rights
+**The octagon world.** Every land tile has a **value** driven by real terrain, coastlines and —
+above all — **real cities** (placed from GeoNames population data). Taking **Chicago or the Ruhr
+beats a rural tile in Maine**. Tiles carry **resource deposits** (🛢️ oil, ⛏️ metals, ⚡ energy,
+☢️ uranium, 💎 rare earths) and **buildings**. Your economy is the sum of the tiles you hold —
+so **conquest instantly transfers a captured city's industry, finance and resources to you.**
 
-Plus **Research** (6 fields incl. a nuclear program) and **Espionage** (gather intel,
-sabotage, steal tech, incite unrest, coups) woven throughout.
+**Hearts-of-Iron-style armies.** Open the **Division Designer** and compose templates from
+battalions — Infantry, Motorized, Mechanized, Armor, Artillery, SP Artillery, Anti-Air — each
+changing the division's HP, organisation, soft attack, defense, breakthrough, armor, speed, cost,
+resource use and manpower. Put templates on **production lines**, deploy the finished divisions,
+then **push front lines tile by tile.** Combat breaks the enemy's **organisation** (they retreat)
+rather than requiring annihilation, and forts/terrain favour the defender.
 
-## 🏆 How to win / lose
+**Build the economy (multi-year).** On your tiles construct **Industrial Complexes, Financial
+Centers, Farm Estates, Military Bases, Research Labs, Infrastructure and Fortifications.** Economic
+buildings take **~2 years** to complete but permanently raise GDP, income, food, production or
+research — a real long-term investment.
 
-- **Victory:** control more than 45% of the world's population.
-- **Defeat:** your nation is conquered.
+**The 12 systems:** Army · Air Force · Navy · Special Forces (warfare) · Diplomacy · Alliances ·
+Resources (5 basic + 3 strategic + 2 rare) · Industry · Agriculture · Finance · Domestic Laws ·
+International Treaties — plus **Research** (6 fields incl. a nuclear program) and **Espionage**
+(intel, sabotage, steal tech, incite unrest, coups).
 
-To conquer a country, declare war and **maintain military superiority** until its forces
-break — and you must be able to *reach* it (a land border, or a strong enough navy).
+## 🏆 Win / lose
+
+- **Victory:** control over 45% of the world's population.
+- **Defeat:** lose your last tile.
 
 ## 💡 Tips
 
-- A healthy **economy funds everything** — raise the Finance sector and keep stability up.
-- Watch for **resource shortages** (right under Stability): they sap stability. Cover them by
-  trading, conquering, or building the right industry.
-- **Political Capital** is spent on diplomacy and passing laws — it regenerates with stability.
-- Higher **taxes** raise income but slow growth and lower stability. Balance carefully.
-- **Nuclear weapons** unlock at Nuclear Program research level 3 — devastating, but using one
-  while you've signed the Non-Proliferation Treaty destroys your global standing.
+- Your economy = your tiles. **Capture cities**, and **build** Industrial/Financial complexes on
+  high-value tiles — they take ~2 years, so start early.
+- Design divisions to your doctrine: cheap **Infantry** to hold lines, **Armor** with high
+  breakthrough to punch through and blitz weakly-held tiles.
+- Armies recover **organisation** faster when stationary and in supply — don't attack exhausted.
+- **Resource deposits (⛏ on the map)** give lasting supply — capturing an enemy's oil is a war aim.
+- **Political Capital** funds diplomacy & laws; **taxes** trade growth for income; **fuel** shortages
+  cripple your armies.
 
 ---
 
 ## 🛠️ Building from source
 
-`index.html` is generated by embedding processed map data into a template.
+`index.html` is generated by embedding the processed tile grid (`game_grid.json`) into
+`game.template.html`. The grid is committed, so you can rebuild the game without re-downloading data:
 
 ```bash
-# 1. (optional) re-download & re-process the world map (public-domain Natural Earth data)
-curl -sSL "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json" -o countries-110m.json
-python3 preprocess_map.py            # -> game_map.json (paths, centroids, land-border adjacency)
+# rebuild the playable file from the template + committed grid data
+python3 -c "open('index.html','w').write(open('game.template.html').read().replace('__GRIDDATA__', open('game_grid.json').read()))"
+```
 
-# 2. embed the map data into the template to produce the standalone game
-python3 -c "open('index.html','w').write(open('game.template.html').read().replace('__MAPDATA__', open('game_map.json').read()))"
+To regenerate the tile grid itself (assign tiles to countries, place cities, compute values):
+
+```bash
+# world borders (public-domain Natural Earth, ~108 KB) is committed as countries-110m.json
+# fetch the GeoNames city dump (population centres) — not committed, ~8 MB:
+curl -sSL -o cities15000.zip https://download.geonames.org/export/dump/cities15000.zip
+python3 -c "import zipfile; zipfile.ZipFile('cities15000.zip').extractall('.')"
+python3 preprocess_grid.py            # -> game_grid.json (tiles, cities, resources, adjacency)
+# then re-run the embed step above
 ```
 
 | File | Purpose |
 | --- | --- |
 | `index.html` | **The game.** Standalone — this is all you need to play. |
-| `game.template.html` | Source template (HTML/CSS/JS) with a `__MAPDATA__` placeholder |
-| `preprocess_map.py` | Decodes the TopoJSON → SVG paths, centroids & adjacency |
-| `game_map.json` | Processed map data embedded into the game |
-| `countries-110m.json` | Raw source map (Natural Earth via world-atlas, public domain) |
-| `test_game.mjs`, `balance_test.mjs` | Playwright smoke & balance tests (`node test_game.mjs`) |
+| `game.template.html` | Source template (HTML/CSS/JS) with a `__GRIDDATA__` placeholder |
+| `preprocess_grid.py` | Builds the octagon tile grid: point-in-polygon country assignment, city placement, tile values, resource deposits |
+| `game_grid.json` | Processed tile data embedded into the game (committed) |
+| `countries-110m.json` | Raw world borders (Natural Earth via world-atlas, public domain) |
+| `test_v2.mjs`, `gameplay_test.mjs`, `final_test.mjs` | Playwright tests (smoke / gameplay+balance / robustness) |
 
 ### Running the tests
 
 ```bash
-node test_game.mjs        # smoke test: rendering, all tabs, a war, console errors
-node balance_test.mjs     # fast-forwards ~6 game-years and reports world/economy balance
+node test_v2.mjs         # smoke: world builds, all tabs render, no console errors
+node gameplay_test.mjs   # army movement, a player offensive, and an 8-year economy balance sweep
+node final_test.mjs      # 12-year world sim, player-defeat path, render performance
 ```
 
 ## Credits
 
-World map derived from [Natural Earth](https://www.naturalearthdata.com/) (public domain)
-via the [world-atlas](https://github.com/topojson/world-atlas) TopoJSON package.
+World borders from [Natural Earth](https://www.naturalearthdata.com/) (public domain) via
+[world-atlas](https://github.com/topojson/world-atlas). City population centres from
+[GeoNames](https://www.geonames.org/) (CC BY 4.0).

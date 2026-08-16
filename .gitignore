@@ -1,5 +1,8 @@
 # generated screenshots (regeneratable via tests)
 *.png
+# large raw GeoNames city dump — regenerate with curl (see README); processed game_grid.json is committed
+cities15000.zip
+cities15000.txt
 # node
 node_modules/
 npm-debug.log*
